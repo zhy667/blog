@@ -1,0 +1,15 @@
+/* styles.css */
+body {
+    display: grid;
+    place-items: center; /* 居中对齐 */
+    height: 100vh; /* 视口高度 */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#myPlugin {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
