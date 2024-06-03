@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+}
+
+.centered-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.centered-list li {
+    margin: 10px 0;
+}
+
+.centered-list a {
+    color: rgb(16, 37, 226);
+    text-decoration: none;
+    font-size: 18px;
+}
