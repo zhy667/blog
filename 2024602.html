@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function displayDate(){
+            document.getElementById("demo").innerHTML=Date();
+        }
+        </script>
+</head>
+<body style="margin: 0;">
+    <div 
+         style="display: flex; align-items: center; justify-content: center; height: 700;">
+        <img src="https://images.pexels.com/photos/22475982/pexels-photo-22475982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="1550" height="900" alt="">
+        <span style="position: absolute; top: 0; left: 0;"> 
+            <p style="background-color:rgb(16, 164, 76)">
+
+今天我尝试了一下去做一个最简单的js放在里面，但却发现他那个显示日期的秒却是你点一下他才会变一下而不是一直同步时间，所以还是要想办法去解决一下这个问题，然后再进行优化
+放到我的首页，来增加一个插件。另外发现再html里面写js还是和再vue里面是大不相同的html里面的js一般放到head里面就是显示head和大脑一样控制思想，而vue里面就是直接script ，setup，script开始script，结束。
+里面写js，然后再写html，css,还是有挺大的差异的。
+
+
+
+
+
+                <h1>js的练习</h1>
+                <p id="demo">时间</p>
+                
+                <button type="button" onclick="displayDate()">显示日期</button>
+    
+</body>
+</html>
