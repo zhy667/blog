@@ -3,88 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supabase Comments</title>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; }
-    #comments { max-width: 600px; margin: auto; }
-    .comment { border-bottom: 1px solid #ccc; padding: 10px 0; }
-    .comment h4 { margin: 0 0 5px; }
-    form { margin-bottom: 20px; }
-  </style>
+  <title>Document</title>
 </head>
 <body>
-  <div id="comments">
-    <h2>评论</h2>
-    <form id="commentForm">
-      <input type="text" id="username" placeholder="留言" required>
-      <textarea id="content" placeholder="1" required></textarea>
-      <button type="submit">提交</button>
-    </form>
-    <div id="commentList"></div>
-  </div>
-
-  <script>
-    // Initialize Supabase client
-    const supabaseUrl = 'https://qygepkldqugdwrdlnsjf.supabase.co'  // 替换为你的Supabase URL
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5Z2Vwa2xkcXVnZHdyZGxuc2pmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTczODEyNzQsImV4cCI6MjAzMjk1NzI3NH0.3FwjS_OJr22Aa-mgokjZQtMS09YlqSthNIG5087exlQ'  // 替换为你的Supabase API密钥
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey)
-
-    const commentForm = document.getElementById('commentForm')
-    const commentList = document.getElementById('commentList')
-
-    // Fetch and display comments
-    async function fetchComments() {
-      const { data: comments, error } = await supabase
-        .from('comments')
-        .select('*')
-        .order('created_at', { ascending: false })
-
-      if (error) {
-        console.error('Error fetching comments:', error)
-      } else {
-        commentList.innerHTML = ''
-        comments.forEach(comment => {
-          const commentElement = document.createElement('div')
-          commentElement.className = 'comment'
-          commentElement.innerHTML = `
-            <h4>${comment.username}</h4>
-            <p>${comment.content}</p>
-            <small>${new Date(comment.created_at).toLocaleString()}</small>
-          `
-          commentList.appendChild(commentElement)
-        })
-      }
-    }
-
-    // Post a new comment
-    commentForm.addEventListener('submit', async (event) => {
-      event.preventDefault()
-      const username = document.getElementById('username').value
-      const content = document.getElementById('content').value
-
-      const { data, error } = await supabase
-        .from('comments')
-        .insert([{ username, content }])
-
-      if (error) {
-        console.error('Error posting comment:', error)
-      } else {
-        fetchComments()  // Refresh the comments list
-        commentForm.reset()
-      }
-    })
-
-    // Listen for new comments in real-time
-    supabase
-      .from('comments')
-      .on('INSERT', payload => {
-        fetchComments()  // Refresh the comments list
-      })
-      .subscribe()
-
-    // Initial fetch of comments
-    fetchComments()
-  </script>
+  <li><a href="index1.html/index.html">123</a></li>
 </body>
 </html>

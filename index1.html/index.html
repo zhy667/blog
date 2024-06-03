@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supabase Comments</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #comments {
+      max-width: 600px;
+      margin: auto;
+    }
+    .comment {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .comment h4 {
+      margin: 0 0 5px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="comments">
+    <h2>留言</h2>
+    <form id="commentForm">
+      <input type="text" id="username" placeholder="Your name" required>
+      <textarea id="content" placeholder="Your comment" required></textarea>
+      <button type="submit">提交</button>
+    </form>
+    <div id="commentList"></div>
+  </div>
+  <!-- 使用 type="module" 属性引入 JavaScript 文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="main.js"></script>
+</body>
+</html>
