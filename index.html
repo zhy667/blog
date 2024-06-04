@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的世界</title>
+    <style>
+    #username {
+    width: 160%;
+    max-width: 193px;
+    height: 20px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+#content {
+    width: 50%;
+    max-width: 500px;
+    height: 30px;
+    margin-bottom: 5px;
+    padding: 3px;
+}
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles3.css">
-
-
+  </style>
 </head>
 <body style="margin: 0;">
   <div 
@@ -16,10 +28,10 @@
  <img src="https://images.pexels.com/photos/1742370/pexels-photo-1742370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="1550" height="1500" alt="">
  
  <span style="position: absolute; top: 0; left: 0;">
-  <p style="background-color:rgb(40, 203, 14)">
+  <p style="background-color:rgb(247, 15, 15)">
 
 
-    <p size="2" color="#f999">初学者的世界:</p><br/>
+    <p1 size="2" color="#f999">初学者的世界</p1><br/>
     <div>
     
       <li>初见</li>              <li><a href="日志.html">序幕</a> </li>
@@ -58,27 +70,19 @@
 
 
 
-      <div class="container">
-        <h1>留言</h1>
-        <form id="commentForm">
-            <textarea id="commentText" placeholder="请写下你的留言" required></textarea>
-            <button type="submit">提交</button>
-        </form>
-        <div id="commentsContainer">
-            <h2>历史评论</h2>
-            <ul id="commentsList"></ul>
-        </div>
-    </div>
-    <script src="script.js"></script>
-    
-    <li><a href="index1.html">评论</a></li>
-    
-    
-    
-      </div>
       
-        </div>
-  </p>
+      <div id="comments">
+        <h2>留言</h2>
+        <form id="commentForm">
+          <input type="text" id="username" placeholder="名字" required>
+          <textarea id="content" placeholder="评论" required></textarea>
+          <button type="submit">提交</button>
+        </form>
+        <div id="commentList"></div>
+      </div>
+      <!-- 使用 type="module" 属性引入 JavaScript 文件 -->
+      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      <script src="main.js"></script>
 </body>
 
 </html>
