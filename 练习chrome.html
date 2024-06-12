@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Our superheroes</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style5.css">
+  </head>
+  <body>
+    <header>
+      <h1>Super Hero Squad</h1>
+    </header>
+    <section id="squad-section">
+      <!-- 内容将通过 JavaScript 动态生成 -->
+    </section>
+    <script>
+      // JSON 数据
+      const jsonString = `
+      {
+        "squadName": "Super Hero Squad",
+        "homeTown": "Metro City",
+        "formed": 2016,
+        "secretBase": "Super tower",
+        "active": true,
+        "members": [
+          {
+            "name": "Molecule Man",
+            "age": 29,
+            "secretIdentity": "Dan Jukes",
+            "powers": [
+              "Radiation resistance",
+              "Turning tiny",
+              "Radiation blast"
+            ]
+          },
+          {
+            "name": "Madame Uppercut",
+            "age": 39,
+            "secretIdentity": "Jane Wilson",
+            "powers": [
+              "Million tonne punch",
+              "Damage resistance",
+              "Superhuman reflexes"
+            ]
+          },
+          {
+            "name": "Eternal Flame",
+            "age": 1000000,
+            "secretIdentity": "Unknown",
+            "powers": [
+              "Immortality",
+              "Heat Immunity",
+              "Inferno",
+              "Teleportation",
+              "Interdimensional travel"
+            ]
+          }
+        ]
+      }
+      `;
+
+      // 解析 JSON 数据
+      const superHeroes = JSON.parse(jsonString);
+
+      // 生成 HTML 内容
+      const squadSection = document.getElementById('squad-section');
+
+      let squadHTML = `<h2>${superHeroes.squadName}</h2>`;
+      squadHTML += `<p><strong>Home Town:</strong> ${superHeroes.homeTown}</p>`;
+      squadHTML += `<p><strong>Formed:</strong> ${superHeroes.formed}</p>`;
+      squadHTML += `<p><strong>Secret Base:</strong> ${superHeroes.secretBase}</p>`;
+      squadHTML += `<p><strong>Active:</strong> ${superHeroes.active}</p>`;
+
+      squadHTML += '<h3>Members</h3>';
+      squadHTML += '<ul>';
+
+      superHeroes.members.forEach(member => {
+        squadHTML += `<li><strong>Name:</strong> ${member.name}<br>`;
+        squadHTML += `<strong>Age:</strong> ${member.age}<br>`;
+        squadHTML += `<strong>Secret Identity:</strong> ${member.secretIdentity}<br>`;
+        squadHTML += `<strong>Powers:</strong> ${member.powers.join(', ')}</li>`;
+      });
+
+      squadHTML += '</ul>';
+
+      // 将生成的 HTML 内容插入到页面中
+      squadSection.innerHTML = squadHTML;
+    </script>
+  </body>
+</html>
