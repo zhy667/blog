@@ -1,11 +1,11 @@
 
-const keyword = '20246';
+const keyword = 'css';
 
 
 const paragraphs = document.querySelectorAll('article p');
 
 
-paragraphs.forEach((p, index) => {
+paragraphs.forEach((p, _index) => {
   if (p.innerText.includes(keyword)) {
     
     const button = document.createElement('button');
