@@ -19,7 +19,7 @@ if (article) {
   const date = article.querySelector("time")?.parentNode;
 
   (date ?? heading).insertAdjacentElement("afterend", badge);
-
+  alert(123)
  
   document.querySelector(".ng-tns-c1798928316-91").textContent
   const ele = document.createElement("button")
