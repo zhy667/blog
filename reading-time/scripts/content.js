@@ -25,5 +25,9 @@ if (article) {
   const ele = document.createElement("button")
   const target =document.querySelector(".ng-tns-c1798928316-91")
   ele.innerText = "click me"
+  ele.addEventListener('click', () => {
+    alert('按钮被点击了！');
+  
+  });
   target.insertAdjacentElement("afterend",ele)
 }

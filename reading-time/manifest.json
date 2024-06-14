@@ -11,7 +11,7 @@
         "matches": [
           "https://developer.chrome.com/docs/extensions/*",
           "https://developer.chrome.com/docs/webstore/*",
-          "hongyu.life/123.html/*"
+          "https://hongyu.life/123.html/*"
          
         ]
       }
