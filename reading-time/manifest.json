@@ -7,10 +7,9 @@
   
     "content_scripts": [
       {
-        "js": ["scripts/content.js"],
+        "js": ["scripts/content.js","scripts/content1.js"],
         "matches": [
-          "https://developer.chrome.com/docs/extensions/*",
-          "https://developer.chrome.com/docs/webstore/*",
+        
           "https://hongyu.life/123.html/*",
            "https://hongyu.life/123.html?VIN=&subModel=&vehiclePurchaseDate=&baseListPrice=&annualMiles=&odometer=&modificationsValue="
         ]
