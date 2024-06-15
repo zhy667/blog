@@ -21,25 +21,12 @@ if (article) {
   (date ?? heading).insertAdjacentElement("afterend", badge);
   alert(123)
  
-  document.addEventListener('DOMContentLoaded', () => {
-    const target = document.querySelector('.ng-tns-c1798928316-91');
-  
-    // 检查目标元素是否存在
-    if (target) {
-      // 创建一个按钮元素
-      const ele = document.createElement('button');
-      ele.innerText = '点击我'; // 为按钮添加显示文本
-  
-      // 为按钮添加点击事件监听器
-      ele.addEventListener('click', () => {
-        alert('按钮被点击了！');
-      });
-  
-      // 将按钮插入到目标元素之后
-      target.insertAdjacentElement('afterend', ele);
-    } else {
-      console.error('找不到元素: .ng-tns-c1798928316-91');
-    }
-  });
-  
+  document.querySelector(".ng-tns-c1798928316-91").textContent
+  const ele = document.createElement("button")
+  const target =document.querySelector(".ng-tns-c1798928316-91")
+  ele.innerText = "click me"
+  document.addEventListener("click", function(){
+    document.getElementById(".ng-tns-c1798928316-91").innerHTML = "Hello World!";
+});
+  target.insertAdjacentElement("afterend",ele)
 }
