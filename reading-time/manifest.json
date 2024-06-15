@@ -7,7 +7,7 @@
   
     "content_scripts": [
       {
-        "js": ["scripts/content.js","scripts/content1.js"],
+        "js": ["scripts/content.js"],
         "matches": [
         
           "https://hongyu.life/123.html/*",
