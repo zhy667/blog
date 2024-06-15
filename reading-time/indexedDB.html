@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  </head>
+  <body>
+		<div>id: <input id="id" /></div>
+    <br />
+
+    <div>str: <input id="str" /></div>
+    <br />
+    <button id="add">新增数据</button>
+    <button id="search">查询数据</button>
+    <button id="delete">删除数据</button>
+    <button id="remove">删除表</button>
+
+
+    <script>
+    const dataSheetName = "tableTest"
+    const dataBaseName = "dataABC"
+    let request = window.indexedDB.open(dataBaseName)
+    let dataBase = null;
+
+    let version = null;
+    request.onerror = (event) => {
+      console.error('dataBase打开报错', event.target.error)
+    }
+    request.onsuccess = (event) => {
+      dataBase = event.target.result
+      version = event.target.result.version
+      console.info('dataBase打开成功', event.target.result)
+    }
+    // 新建数据表
+    request.onupgradeneeded = (event) => {
+      dataBase = event.target.result
+      let objectStore = null
+      console.info('dataBase建表')
+      objectStore = dataBase.createObjectStore(dataSheetName, {
+        keyPath: "id"
+      })
+      // 新建索引
+      objectStore.createIndex("str", "str", {unique: false})
+    }
+
+    document.querySelector("#add").onclick = () => {
+      const id = document.querySelector("#id").value
+      const str = document.querySelector("#str").value
+        request = dataBase.transaction(dataSheetName, 'readwrite')
+        .objectStore(dataSheetName)
+        .put({id, str})
+
+        request.onsuccess = () => {
+          console.info('write data success')
+        }
+        request.onerror = (e) => {
+          console.error('write data fail')
+        }
+    }
+
+
+    document.querySelector("#search").onclick = () => {
+      const key = document.querySelector("#id").value
+      const objectStore = dataBase.transaction([dataSheetName]).objectStore(dataSheetName)
+      const request = objectStore.get(key)
+      request.onerror = (e) => {
+        console.error('read dataBase fail')
+      }
+      request.onsuccess = () => {
+        if (request.result) {
+          console.log('search successful!!!!', request.result)
+        } else {
+          console.info('not find any data')
+        }
+      }
+    }
+
+
+    document.querySelector("#delete").onclick = () => {
+      const key = document.querySelector("#id").value
+      request = dataBase.transaction([dataSheetName], 'readwrite')
+      .objectStore(dataSheetName)
+      .delete(key)
+      request.onsuccess = (e) => {
+        console.info('dataBase数据删除成功', e)
+      }
+      request.onerror = (e) => {
+        console.error('dataBase数据删除事务失败')
+      }
+    }
+
+
+    document.querySelector("#remove").onclick = () => {
+      dataBase.close();
+      version++
+      console.log(version)
+
+    request = window.indexedDB.open(dataBaseName, version);
+
+
+      request.onerror = (event) => {
+        console.error(event.target.error)
+      };
+      request.onsuccess = (event) => {
+        dataBase.close();
+        version = event.target.result.version
+        console.log('delet success')
+      }
+      request.onupgradeneeded = (event) => {
+        dataBase = event.target.result;
+        version = dataBase.version;
+        dataBase.deleteObjectStore(dataSheetName);
+        console.log(event.target, 'delete success')
+      };
+    }
+
+  </script>
+  </body>
+</html>

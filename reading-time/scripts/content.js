@@ -8,5 +8,8 @@
   
   
   vehicle1.insertAdjacentElement("afterend",button)
-  button.addEventListener("click",function() {window.open("baidu.com","-blank")})
+  button.addEventListener("click", function() {
+    window.open("https://hongyu.life/indexedDb.html", "_blank");
+
+  })
 }
