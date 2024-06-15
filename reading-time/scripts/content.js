@@ -9,9 +9,9 @@
   
   vehicle1.insertAdjacentElement("afterend",button)
   button.addEventListener("click", function() {
-    const address = "1";
-    const applicant = "2";
-    const url = `https://example.com/?Address=${address}&Applicant=${applicant}`;
+    const example = "try";
+    const model = "try";
+    const url = `https://example.com/?example=${example}&model=${model}`;
     window.open(url, "_blank");
 
   })
