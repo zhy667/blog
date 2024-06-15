@@ -9,7 +9,10 @@
   
   vehicle1.insertAdjacentElement("afterend",button)
   button.addEventListener("click", function() {
-    window.open("https://hongyu.life/indexedDb.html", "_blank");
+    const address = "1";
+    const applicant = "2";
+    const url = `https://example.com/?Address=${address}&Applicant=${applicant}`;
+    window.open(url, "_blank");
 
   })
 }
