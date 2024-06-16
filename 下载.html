@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Download Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="downloadButton">Download File</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#downloadButton").click(function() {
+                var $eleForm = $("<form method='get'></form>");
+                $eleForm.attr("action", "https://codeload.github.com/douban/douban-client/legacy.zip/master");
+                $(document.body).append($eleForm);
+                $eleForm.submit();
+            });
+        });
+    </script>
+</body>
+</html>
