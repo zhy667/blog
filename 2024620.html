@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;">
+    <div 
+         style="display: flex; align-items: center; justify-content: center; height: 700;">
+        <img src="https://images.pexels.com/photos/19345473/pexels-photo-19345473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="1550" height="1300" alt="">
+        <span style="position: absolute; top: 0; left: 0;"> 
+            <p style="background-color:rgb(100, 14, 219)">
+学习的两个例子
+
+    function 声明创建一个 Function 对象。每次调用函数时，都会返回最后执行 return 语句所指定的值，如果执行直到函数体的结尾，则返回 undefined
+
+    function calcRectArea(width,height)
+        return width*height;
+        console.log(calcRectArea(5,9))
+        
+
+    Promise 类有 .then() .catch() 和 .finally() 三个方法，这三个方法的参数都是一个函数，.then() 可以将参数中的函数添加到当前 Promise 的正常执行序列，.catch() 则是设定 Promise 的异常处理序列，.finally() 是在 Promise 执行的最后一定会执行的序列。 .then() 传入的函数会按顺序依次执行
+
+new Promise(function (resolve, reject) {
+    console.log(1111);
+    resolve(2222);
+}).then(function (value) {
+    console.log(value);
+    return 3333;
+}).then(function (value) {
+    console.log(value);
+    throw "An error";
+}).catch(function (err) {
+    console.log(err);
+});
+
+
+
+    </script>
+</body>
+</html>
