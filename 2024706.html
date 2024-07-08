@@ -12,8 +12,21 @@
         <span style="position: absolute; top: 0; left: 0;"> 
             <p style="background-color:rgb(15, 88, 74)">
     
-
-
+                回调函数的演示 对回调函数的学习，总体看着很简单，对理解能力强大的来说简单，但向我这样笨的来说还是理解了好久，固定的function+自定义名字（可以放入一个也可以两个多个）{放入想要
+                调回的东西如callback}callback是必须有的，但也可以不用交callback是为了方便理解记住，而必须要有赋值就add()不然是找不到的，具体的可以打开检查看我的script
+                <script>
+                    function add(sum,nba,callback){
+                        sum = 1
+                        nba = 2
+                        callback(sum,nba);
+                    }
+                    function print(sum,nba){
+                        console.log(sum,nba);
+                    }
+                    
+                    add(1,2,print)
+                    
+</script>
 
 
 
