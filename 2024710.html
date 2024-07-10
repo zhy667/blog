@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;">
+    <div 
+         style="display: flex; align-items: center; justify-content: center; height: 700;">
+        <img src="https://images.pexels.com/photos/9551192/pexels-photo-9551192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="1550" height="1300" alt="">
+        <span style="position: absolute; top: 0; left: 0;"> 
+            <p style="background-color:rgb(10, 180, 30)">
+    
+watch监听  它是一个侦听器，可以用于侦听单个变量或对象的属性，可以传入一个回调函数，在值变化时执行该函数,明确指出监听的数据。
+watchEffect  立即运行一个函数，响应式地追踪器依赖，并在依赖更改时重新执行该函数,不用明确指出监视的数据。
+watchPostEffect 接受一个函数作为参数，和 watchEffect 类似，会自动执行这个函数，并在函数执行过程中收集函数所依赖的响应式数据，watchPostEffect 会在函数执行结束后再次执行一次
+watchSyncEffect  和 watchEffect 类似，会自动执行这个函数，并在函数执行过程中收集函数所依赖的响应式数据，watchSyncEffect 会立即执行一次回调函数，而不是等到下一个事件循环才执行。
+而对于我来说 watchPostEffect用的比较舒服，其他的看个人需求
+
+    ref使用的对象不同，获取到的结果也是不一样的：
+
+<1> 自定义组件使用ref属性，通过ref值可获取到该自定义组件；
+
+<2> 普通HTML标签使用ref属性，通过ref值获取到的是该标签对应的DOM；
+
+
+
+    
+</span>
+      
+</p>
+</body>
+</html>
