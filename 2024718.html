@@ -11,8 +11,12 @@
         <img src="https://images.pexels.com/photos/7038113/pexels-photo-7038113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="1550" height="1300" alt="">
         <span style="position: absolute; top: 0; left: 0;"> 
             <p style="background-color:rgb(154, 22, 119)">
-    
-
+    对react响应事件的学习（新手基础）
+    对与响应事件来说大多数都是添加一个button然后在onclick进行绑定，将事件绑定然后点击就会加载事件，现在换清楚的记得vue的button @click""绑定事件，
+    而今天所学的react也是类似的，只不过他的button onclick={放入需要呈现的东西}所以还是有所不一样的，但大体相似，react是传递prop而不是调用 这个 alert 在组件渲染时触发，而不是点击时触发！
+    button onClick={alert('你点击了我！')}，想要定义内联事件处理函数，请将其包装在匿名函数中button onClick={() => alert('你点击了我！')}，对其中在传递时，children不能忘记，他是按钮内部所呈现的名字
+    所以也不能忘记传递。button onClick={e => { e.stopPropagation();onClick()；}}这是阻止一个事件到达父组件，因为有些所传递的并不需要响应，而这个函数刚好可以组织。e.stopPropagation() 阻止触发绑定在外层标签上的事件处理函数。
+    e.preventDefault() 阻止少数事件的默认浏览器行为。
 
 
 
