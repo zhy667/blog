@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;">
+    <div 
+         style="display: flex; align-items: center; justify-content: center; height: 700;">
+        <img src="https://images.pexels.com/photos/26775381/pexels-photo-26775381.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="1550" height="1300" alt="">
+        <span style="position: absolute; top: 0; left: 0;"> 
+            <p style="background-color:rgb(196, 28, 39)">
+    对state的学习（新手）
+    在react中有些输入的如图片，输入值等需要被组件记住的东西，而对这些特有记忆力的组件成为state，它是组件数据的私有部分，可以用来管理动态数据
+    状态仅适用于类组件，或者使用 React 的 Hook 时可以在函数组件中使用。最常用的 Hook 是 useState，使用这个组件第一步就是引用，const[index,setindex]=usestate();然后需要setindex(需要改变的新的值等)，那你必须使用
+    有着记忆力可以记得return的东西，而设置state则不会改变你原本的，只是会渲染新的，当 React 重新渲染一个组件时： React 会再次调用你的函数，函数会返回新的 JSX 快照，React 会更新界面以匹配返回的快照。
+    在react的渲染经理三个过程，1组件处罚第一次渲染2在进行初次渲染时, React 会调用根组件3在渲染（调用）你的组件之后，React 将会修改 DOM.   期间如果要再次进行渲染时，state则会记忆并且渲染最新的。
+
+
+
+
+
+
+
+
+            </span>
+      
+        </p>
+    
+
+</body>
+</html>
