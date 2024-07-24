@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;">
+    <div 
+         style="display: flex; align-items: center; justify-content: center; height: 700;">
+        <img src="https://images.pexels.com/photos/27218751/pexels-photo-27218751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="1550" height="1300" alt="">
+        <span style="position: absolute; top: 0; left: 0;"> 
+            <p style="background-color:rgb(27, 74, 151)">
+state渲染学习（基础）
+今天学的react state的渲染就很有一次，正常的话 setNumber(number + 1);我们复制三次 setNumber(number + 1);这样的话就会加三次，但是每一次渲染的 state 值都是固定的，因此无论你调用多少次 setNumber(1)，在第一次渲染的事件处理函数内部的 number 值总是 0 
+React 会等到事件处理函数中的 所有 代码都运行完毕再处理你的 state 更新。 这就是为什么重新渲染只会发生在所有这些 setNumber() 调用 之后 的原因，在每一次的点击都是单独处理的，setNumber(n => n + 1) 这样传入一个根据队列中的前一个 state 计算下一个 state 的 函数，而不是像 setNumber(number + 1) 这样传入 下一个 state 值都是固定的，因此无论你调用多少次，
+state 中可以保存任意类型的 JavaScript 值，包括对象。但是，你不应该直接修改存放在 React state 中的对象。相反，当你想要更新一个对象时，你需要创建一个新的对象（或者将其拷贝一份），然后将 state 更新为此对象，const [x, setX] = useState(0);在（）里面不仅可以放数字，字符串，也可以放对象，但是所表示的是不一样的。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </span>
+      
+        </p>
+</body>
+</html>
